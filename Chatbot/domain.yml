@@ -1,0 +1,21 @@
+version: "3.1"
+
+intents:
+  - start_game
+  - make_move
+  - quit_game
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_quit:
+  - text: "Vielen Dank für das Spiel!"
+
+actions:
+ - action_start_game
+ - action_make_move
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

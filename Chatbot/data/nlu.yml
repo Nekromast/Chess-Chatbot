@@ -1,0 +1,22 @@
+version: "3.1"
+
+nlu:
+- intent: start_game
+  examples: |
+    - Ich will Schach spielen
+    - Lass Schach spielen
+    - Starte Schach
+    - Schach
+
+- intent: make_move
+    - Bewege meinen Bauern nach D3
+    - Bewege meinen König nach b2
+    - Ich will meine Königin nach e4 
+    - Burg nach f2
+
+- intent:quit_game
+    - Beende Schach
+    - Ich gebe auf
+    - Stop
+    - Ich will nicht mehr spielen
+

@@ -1,0 +1,18 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: start game path
+  steps:
+  - user: |
+      Neues Spiel
+    intent: start_game
+  - action: action_start_game
+  - user: |
+      Bauer zu b3
+  - intent: make_move
+  - action: action_make_move
+  - user: |
+      Ich hör auf
+  - intent: quit_game
+  - action: utter_quit

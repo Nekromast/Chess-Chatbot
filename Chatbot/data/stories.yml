@@ -1,0 +1,11 @@
+version: "3.1"
+
+stories:
+
+- story: start game path
+  steps:
+  - intent: start_game
+  - action: action_start_game
+  - intent: make_move
+  - action: action_make_move
+
