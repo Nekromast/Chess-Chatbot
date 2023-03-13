@@ -7,6 +7,13 @@ nlu:
     - Lass Schach spielen
     - Starte Schach
     - Schach
+    - Spiel Schach
+    - Ich will Schach
+    - Ich würd gern Schach spielen
+    - Spiel Schach mit mir
+    - Spiel Schach gegen mich
+    - Ich fordere dich zu Schach heraus
+    - Ich fordere dich zu einem Schachspiel heraus
 
 
 - intent: quit_game
@@ -15,6 +22,11 @@ nlu:
     - Ich gebe auf
     - Stop
     - Ich will nicht mehr spielen
+    - Ich will nicht mehr Schach spielen
+    - Ich will nicht mehr
+    - du hast gewonnen
+    - ich hab verloren
+    -
 
 
 - intent: make_move
@@ -58,6 +70,21 @@ nlu:
     - Was ist der aktuelle Punktestand?
     - Wie ist der aktuelle Spielstand?
     - Wie ist der aktuelle Stand?
+
+- intent: restart_game
+  examples:
+    - Ich möchte das Spiel neu starten
+    - Ich möchte das Spiel von vorne beginnen
+    - Ich möchte das Spiel von neuem beginnen
+    - Ich möchte das Spiel von neuem starten
+    - Ich will von neu anfangen
+    - Ich will von neu beginnen
+    - Ich will von neu starten
+    - Ich will von neuem anfangen
+    - nochmal vom Anfang
+    - nochmal von neuem
+    - nochmal von neuem anfangen
+    - nochmal von neuem beginnen
 
 - entity: piece
   values:
@@ -109,3 +136,8 @@ nlu:
 - entity: checkmate
   values:
   - Schachmatt
+
+- entity: color
+  values:
+  - weiß
+  - schwarz

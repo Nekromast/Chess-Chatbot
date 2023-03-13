@@ -32,7 +32,7 @@ class ActionMakeMove(Action):
         # Send the AI's move back to the user via the chatbot
         dispatcher.utter_message("My move is: {}".format(ai_move))
 
-        return []
+        return [SlotSet("move", ai_move)]
 
 
 class ActionStartGame(Action):
@@ -43,7 +43,6 @@ class ActionStartGame(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         # Führen Sie hier die Aktion aus, um das Spiel zu starten
         # Zum Beispiel, indem Sie eine API-Anfrage an einen Game-Server senden
         ChessAI.start()
@@ -63,12 +62,31 @@ class ActionQuitGame(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Hier code für das Beenden des Spiels einfügen
-        ChessAI.resign()
+        ChessAI.quit()
         # Quit the game
 
         # Send a message to the user
         dispatcher.utter_message("Game ended!")
 
         return [SlotSet("game_started", False)]
+
+
+class ActionRestartGame(Action):
+
+    def name(self) -> Text:
+        return "action_restart_game"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Hier code für das Neustarten des Spiels einfügen
+        ChessAI.restart()
+        # Restart the game
+
+        # Send a message to the user
+        dispatcher.utter_message("Game restarted!")
+
+        return [SlotSet("game_started", True)]
+
 
 
