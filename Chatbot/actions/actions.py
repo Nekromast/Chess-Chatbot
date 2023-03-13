@@ -14,6 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from ChessAI.main import ChessAI
 
+ChessAI = ChessAI()
 
 class ActionMakeMove(Action):
 
@@ -46,7 +47,7 @@ class ActionStartGame(Action):
 
         # Führen Sie hier die Aktion aus, um das Spiel zu starten
         # Zum Beispiel, indem Sie eine API-Anfrage an einen Game-Server senden
-        ChessAI.start()
+        ChessAI.start_game("white", vs_ai=True)
         # Antworte dem Benutzer mit einer Bestätigungsnachricht
         dispatcher.utter_message(text="Das Spiel wurde gestartet!")
 
@@ -63,7 +64,7 @@ class ActionQuitGame(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Hier code für das Beenden des Spiels einfügen
-        ChessAI.resign()
+        ChessAI.quit_game()
         # Quit the game
 
         # Send a message to the user
