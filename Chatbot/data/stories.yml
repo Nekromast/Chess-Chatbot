@@ -9,3 +9,17 @@ stories:
   - intent: make_move
   - action: action_make_move
 
+- story: make move path
+  steps:
+    - intent: make_move
+    - action: action_make_move
+
+- story: undo move path
+  steps:
+      - intent: undo_move
+      - action: action_undo_move
+
+- story: quit game path
+  steps:
+        - intent: quit_game
+        - action: action_quit_game

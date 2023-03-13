@@ -3,11 +3,39 @@ version: "3.1"
 intents:
   - start_game
   - make_move
+  - undo_move
   - quit_game
+  - get_game_status
+  - restart_game
+
+entities:
+    - piece
+    - source_square
+    - target_square
+    - castling
+    - promotion
+    - check
+    - checkmate
+
+slots:
+  move:
+    type: text
+  piece:
+    type: unfeaturized
+  source_square:
+    type: unfeaturized
+  target_square:
+    type: unfeaturized
+  castling:
+    type: unfeaturized
+  promotion:
+    type: unfeaturized
+  game_started:
+    type: bool
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! Willst du Schach spielen?"
 
   utter_quit:
   - text: "Vielen Dank für das Spiel!"
@@ -15,6 +43,10 @@ responses:
 actions:
  - action_start_game
  - action_make_move
+ - action_undo_move
+ - action_quit_game
+ - action_get_game_status
+ - action_restart_game
 
 session_config:
   session_expiration_time: 60
