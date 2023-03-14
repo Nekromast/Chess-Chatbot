@@ -59,13 +59,6 @@ slots:
     - type: from_entity
       entity: promotion
       intent: make_move
-  game_started:
-    type: bool
-    initial_value: false
-    mappings:
-    - type: custom
-      action: action_extract_slots
-      intent: start_game
   color:
     type: text
     mappings:
@@ -107,10 +100,10 @@ responses:
   - text: "Wähle eine Farbe aus: Weiß oder Schwarz?"
 
   utter_goodbye:
-    - text: "Auf Wiedersehen!"
+  - text: "Auf Wiedersehen!"
 
   utter_iamabot:
-    - text: "Ich bin ein Chatbot, Herr Gawron"
+  - text: "Ich bin ein Chatbot, Herr Gawron"
 
 
 actions:

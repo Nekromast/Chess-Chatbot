@@ -56,7 +56,7 @@ class ActionStartGame(Action):
         dispatcher.utter_message(text="Das Spiel wurde gestartet!")
 
         # Setze den "game_started" Slot auf True, um zu verfolgen, dass das Spiel gestartet wurde
-        return [SlotSet("game_started", True)]
+        return []
 
 
 class ActionQuitGame(Action):
@@ -74,7 +74,7 @@ class ActionQuitGame(Action):
         # Send a message to the user
         dispatcher.utter_message("Das Spiel wurde beendet!")
 
-        return [SlotSet("game_started", False)]
+        return []
 
 
 #class ActionRestartGame(Action):

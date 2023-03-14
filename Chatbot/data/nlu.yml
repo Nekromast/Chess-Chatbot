@@ -153,6 +153,28 @@ nlu:
       - Ich nehme [weiss](color)
       - Gib mir [weiß](color)
       - Gib mir [schwarz](color)
+
+  - intent: goodbye
+    examples: |
+      - Auf Wiedersehen
+      - Tschüss
+      - Bis später
+      - Bis zum nächsten Mal
+      - Bis bald
+      - Ciao
+      - Bye
+      - Bye bye
+      - Goodbye
+      - Good bye
+      - Good bye bye
+      - Good bye bye bye
+      - Good bye bye bye bye
+      - Good bye bye bye bye bye
+      - Good bye bye bye bye bye bye
+      - Good bye bye bye bye bye bye bye
+      - Good bye bye bye bye bye bye bye bye
+      - Good bye bye bye bye bye bye bye bye bye
+      - Good bye
     
   
 
