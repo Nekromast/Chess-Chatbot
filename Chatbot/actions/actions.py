@@ -33,6 +33,7 @@ class ActionMakeMove(Action):
 
         # Send the AI's move back to the user via the chatbot
         dispatcher.utter_message("My move is: {}".format(ai_move))
+        dispatcher.utter_message("The board looks like this: {}".format(ChessAI.get_board()))
 
         return []
 
@@ -54,6 +55,8 @@ class ActionStartGame(Action):
         ChessAI.start_game(color, vs_ai=True)
         # Antworte dem Benutzer mit einer Bestätigungsnachricht
         dispatcher.utter_message(text="Das Spiel wurde gestartet!")
+        dispatcher.utter_message(text="Deine Farbe ist: {}".format(color))
+        dispatcher.utter_message(text="Das Spielbrett sieht so aus: {}".format(ChessAI.get_board()))
 
         # Setze den "game_started" Slot auf True, um zu verfolgen, dass das Spiel gestartet wurde
         return []

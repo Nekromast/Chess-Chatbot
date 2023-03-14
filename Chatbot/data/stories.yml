@@ -12,9 +12,16 @@ stories:
   - slot_was_set:
     - color: "schwarz"
   - action: action_start_game
-  - slot_was_set:
-    - game_started: true
   - checkpoint: game_started
+
+- story: choose Color
+  steps:
+  - intent: choose_color
+    entities:
+    - color: "schwarz"
+  - slot_was_set:
+    - color: "schwarz"
+  - action: action_start_game
 
 - story: make move, pawn a2 a4 and game_started
   steps:
@@ -73,7 +80,7 @@ stories:
 
 
 
-- story: make move, not game_started
+- story: make move, game not started
   steps:
   - intent: make_move
   - action: utter_notstarted
