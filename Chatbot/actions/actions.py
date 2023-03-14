@@ -34,7 +34,7 @@ class ActionMakeMove(Action):
         # Send the AI's move back to the user via the chatbot
         dispatcher.utter_message("My move is: {}".format(ai_move))
 
-        return [SlotSet("move", ai_move)]
+        return []
 
 
 class ActionStartGame(Action):
@@ -77,40 +77,40 @@ class ActionQuitGame(Action):
         return [SlotSet("game_started", False)]
 
 
-class ActionRestartGame(Action):
+#class ActionRestartGame(Action):
+#
+ #   def name(self) -> Text:
+  #      return "action_restart_game"
+#
+ #   def run(self, dispatcher: CollectingDispatcher,
+  #          tracker: Tracker,
+   #         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    #    # Hier code für das Neustarten des Spiels einfügen
+     #   ChessAI.restart()
+      #  # Restart the game
+#
+ #       # Send a message to the user
+  #      dispatcher.utter_message("Das Spiel wurde neugestartet!")
+#
+ #       return [SlotSet("game_started", True)]
+#
 
-    def name(self) -> Text:
-        return "action_restart_game"
+#class ActionGetBoard(Action):
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+ #   def name(self) -> Text:
+  #      return "action_get_board"
+
+   # def run(self, dispatcher: CollectingDispatcher,
+    #        tracker: Tracker,
+     #       domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Hier code für das Neustarten des Spiels einfügen
-        ChessAI.restart()
+      #  board = ChessAI.get_board()
         # Restart the game
 
         # Send a message to the user
-        dispatcher.utter_message("Das Spiel wurde neugestartet!")
+       # dispatcher.utter_message("Das Spielbrett sieht so aus: {}".format(board))
 
-        return [SlotSet("game_started", True)]
-
-
-class ActionGetBoard(Action):
-
-    def name(self) -> Text:
-        return "action_get_board"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Hier code für das Neustarten des Spiels einfügen
-        board = ChessAI.get_board()
-        # Restart the game
-
-        # Send a message to the user
-        dispatcher.utter_message("Das Spielbrett sieht so aus: {}".format(board))
-
-        return []
+      #  return []
 
 
 class ActionConstructMove(Action):

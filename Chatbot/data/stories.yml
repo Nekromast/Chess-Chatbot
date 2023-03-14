@@ -8,76 +8,56 @@ stories:
   - action: action_start_game
   - slot_was_set:
       - game_started: true
+  - checkpoint: game_started
 
-- story: make move, pawn a2 a4
-
+- story: make move, pawn a2 a4 and game_started
   steps:
     - intent: make_move
     - entities:
         - piece: "Bauer"
+          slot_was_set:
+            - piece: "Bauer"
         - source_square: "a2"
+          slot_was_set:
+            - source_square: "a2"
         - target_square: "a4"
-        - action: action_make_move
+          slot_was_set:
+            - target_square: "a4"
+        - action: construct_move
         - slot_was_set:
             - move: "Bauer a2 a4"
+        - action: action_make_move
 
 
-- story: make move, pawn a2 a3
+- story: make move, not game_started
   steps:
     - intent: make_move
-      entities:
-            - piece: "Bauer"
-            - source_square: "a2"
-            - target_square: "a3"
-    - action: action_make_move
-    - slot_was_set:
-                - move: "Bauer a2 a3"
+    - action: utter_gamenotstarted
 
 
-- story: make move, queen d1 h5
-  steps:
-    - intent: make_move
-      conditions:
-            - slot_was_set:
-                - game_started: true
-      entities:
-            - piece: "Dame"
-            - source_square: "d1"
-            - target_square: "h5"
-      slot_was_set:
-                - move: "Dame d1 h5"
-    - action: action_make_move
 
-- story: make move, game not started
-  steps:
-    - intent: make_move
-      conditions:
-            - slot_was_set:
-                - game_started: false
-      action: utter_notstarted
+#- story: undo move path
+ # steps:
+  #    - intent: undo_move
 
-- story: undo move path
-  steps:
-      - intent: undo_move
-
-      - action: action_undo_move
+   #   - action: action_undo_move
 
 - story: quit game path
   steps:
         - intent: quit_game
         - action: action_quit_game
 
-- story: get game status path
-  steps:
-        - intent: get_game_status
-        - action: action_get_game_status
+#- story: get game status path
+ # steps:
+  #      - intent: get_game_status
+   #     - action: action_get_game_status
 
-- story: restart game path
-  steps:
-          - intent: restart_game
-            conditions:
-                - slot_was_set:
-                    - game_started: true
-          - action: action_restart_game
+#- story: restart game path
+#  steps:
+#          - intent: restart_game
+#            conditions:
+#                - slot_was_set:
+#                    - game_started: true
+#          - action: action_restart_game
 
 
