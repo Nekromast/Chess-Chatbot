@@ -1,143 +1,151 @@
 version: "3.1"
 
 nlu:
-- intent: start_game
-  examples: |
-    - Ich will Schach spielen
-    - Lass Schach spielen
-    - Starte Schach
-    - Schach
-    - Spiel Schach
-    - Ich will Schach
-    - Ich würd gern Schach spielen
-    - Spiel Schach mit mir
-    - Spiel Schach gegen mich
-    - Ich fordere dich zu Schach heraus
-    - Ich fordere dich zu einem Schachspiel heraus
+  - entities:
+      - color
+      - examples: |
+          - [weiß](color)
+          - [schwarz](color)
+          - [weiss](color)
+      - check
+      - examples: |
+          - [Schach](check)
+      - checkmate
+      - examples: |
+          - [Schachmatt](checkmate)
+
+  - intent: start_game
+    examples: |
+      - Ich will Schach spielen
+      - Lass Schach spielen
+      - Starte Schach
+      - Schach
+      - Spiel Schach
+      - Ich will Schach
+      - Ich würd gern Schach spielen
+      - Spiel Schach mit mir
+      - Spiel Schach gegen mich
+      - Ich fordere dich zu Schach heraus
+      - Ich fordere dich zu einem Schachspiel heraus
 
 
-- intent: quit_game
-  examples:
-    - Beende Schach
-    - Ich gebe auf
-    - Stop
-    - Ich will nicht mehr spielen
-    - Ich will nicht mehr Schach spielen
-    - Ich will nicht mehr
-    - du hast gewonnen
-    - ich hab verloren
-    -
+  - intent: quit_game
+    examples: |
+      - Beende Schach
+      - Ich gebe auf
+      - Stop
+      - Ich will nicht mehr spielen
+      - Ich will nicht mehr Schach spielen
+      - Ich will nicht mehr
+      - du hast gewonnen
+      - ich hab verloren
 
 
-- intent: make_move
-  examples: |
-    - Ich möchte meinen Springer von [e2](source_square) nach [g3](target_square) bewegen
-    - Setze meinen [Läufer](piece) auf [d4](target_square)
-    - Ich ziehe meinen [König](piece) von [e1](source_square) nach [g1](target_square)
-    - [Bauer](piece) von [h2](source_square) nach [h4](target_square)
-    - [Dame](piece) von [d8](source_square) nach [d4](target_square)
-    - [Turm](piece) von [a1](source_square) nach [a8](target_square)
-    - [Läufer](piece) von [c1](source_square) nach [f4](target_square)
-    - [Springer](piece) von [b1](source_square) nach [c3](target_square)
-    - [Bauer](piece) von [a2](source_square) nach [a4](target_square)
-    - [Dame](piece) von [d1](source_square) nach [d4](target_square)
-    - [Turm](piece) von [h1](source_square) nach [h8](target_square)
-    - [Läufer](piece) von [f1](source_square) nach [c4](target_square)
-    - [Springer](piece) von [g1](source_square) nach [f3](target_square)
-    - [Bauer](piece) von [a7](source_square) nach [a5](target_square)
-    - [Dame](piece) von [d8](source_square) nach [d5](target_square)
-    - [Turm](piece) von [a8](source_square) nach [a1](target_square)
-    - [Läufer](piece) von [c8](source_square) nach [f5](target_square)
-    - [Springer](piece) von [b8](source_square) nach [c6](target_square)
-    - [Bauer](piece) von [b2](source_square) nach [b4](target_square)
-    - [Dame](piece) von [d1](source_square) nach [d5](target_square)
-    - [Turm](piece) von [h8](source_square) nach [h1](target_square)
-      
-      
+  - intent: make_move
+    examples: |
+      - Ich möchte meinen [Springer](piece) von [e2](source_square) nach [g3](target_square) bewegen
+      - Setze meinen [Läufer](piece) auf [d4](target_square)
+      - Ich ziehe meinen [König](piece) von [e1](source_square) nach [g1](target_square)
+      - [Bauer](piece) von [h2](source_square) nach [h4](target_square)
+      - [Dame](piece) von [d8](source_square) nach [d4](target_square)
+      - [Turm](piece) von [a1](source_square) nach [a8](target_square)
+      - [Läufer](piece) von [c1](source_square) nach [f4](target_square)
+      - [Springer](piece) von [b1](source_square) nach [c3](target_square)
+      - [Bauer](piece) von [a2](source_square) nach [a4](target_square)
+      - [Dame](piece) von [d1](source_square) nach [d4](target_square)
+      - [Turm](piece) von [h1](source_square) nach [h8](target_square)
+      - [Läufer](piece) von [f1](source_square) nach [c4](target_square)
+      - [Springer](piece) von [g1](source_square) nach [f3](target_square)
+      - [Bauer](piece) von [a7](source_square) nach [a5](target_square)
+      - [Dame](piece) von [d8](source_square) nach [d5](target_square)
+      - [Turm](piece) von [a8](source_square) nach [a1](target_square)
+      - [Läufer](piece) von [c8](source_square) nach [f5](target_square)
+      - [Springer](piece) von [b8](source_square) nach [c6](target_square)
+      - [Bauer](piece) von [b2](source_square) nach [b4](target_square)
+      - [Dame](piece) von [d1](source_square) nach [d5](target_square)
+      - [Turm](piece) von [h8](source_square) nach [h1](target_square)
+      - [Läufer](piece) von [f8](source_square) nach [c5](target_square)
+      - [Springer](piece) von [g8](source_square) nach [f6](target_square)
+      - [Bauer](piece) von [b7](source_square) nach [b5](target_square)
+      - [Dame](piece) von [d8](source_square) nach [d5](target_square)
 
-- intent: undo_move
-  examples: |
-    - Ich möchte den letzten Zug rückgängig machen
-    - Bitte ziehe den Zug zurück, den ich gerade gemacht habe
-    - Ich möchte den Zug wiederholen, den ich zuvor gemacht habe
-    - Ich möchte den letzten Zug wiederholen
-    
+    entities:
+      - piece
+      - examples: |
+          - Bauer
+          - Dame
+          - König
+          - Turm
+          - Läufer
+          - Springer
+      - source_square
+      - examples: |
+          - a1
+          - a2
+          - a3
+          - a4
+          - f5
+          - h6
+          - e2
+          - d4
+      - target_square
+      - examples: |
+          - a1
+          - a2
+          - a3
+          - a4
+          - f5
+          - h6
+          - e2
+          - d4
+      - castling
+      - examples: |
+          - Königsflügel
+          - Damenflügel
+      - promotion
+      - examples: |
+          - Dame
+          - Turm
+          - Läufer
+          - Springer
 
-- intent: get_game_status
-  examples: |
-    - Wie steht es um das Spiel?
-    - Wer führt im Moment?
-    - Was ist der aktuelle Punktestand?
-    - Wie ist der aktuelle Spielstand?
-    - Wie ist der aktuelle Stand?
 
-- intent: restart_game
-  examples:
-    - Ich möchte das Spiel neu starten
-    - Ich möchte das Spiel von vorne beginnen
-    - Ich möchte das Spiel von neuem beginnen
-    - Ich möchte das Spiel von neuem starten
-    - Ich will von neu anfangen
-    - Ich will von neu beginnen
-    - Ich will von neu starten
-    - Ich will von neuem anfangen
-    - nochmal vom Anfang
-    - nochmal von neuem
-    - nochmal von neuem anfangen
-    - nochmal von neuem beginnen
 
-- entity: piece
-  values:
-  - König
-  - Dame
-  - Turm
-  - Läufer
-  - Springer
-  - Bauer
+  - intent: undo_move
+    examples: |
+      - Ich möchte den letzten Zug rückgängig machen
+      - Bitte ziehe den Zug zurück, den ich gerade gemacht habe
+      - Ich möchte den Zug wiederholen, den ich zuvor gemacht habe
+      - Ich möchte den letzten Zug wiederholen
 
-- entity: source_square
-  examples: |
-    - a1
-    - b2
-    - c3
-    - d4
-    - e5
-    - f6
-    - g7
-    - h8
 
-- entity: target_square
-  examples: |
-    - a1
-    - b2
-    - c3
-    - d4
-    - e5
-    - f6
-    - g7
-    - h8
+  - intent: get_game_status
+    examples: |
+      - Wie steht es um das Spiel?
+      - Wer führt im Moment?
+      - Was ist der aktuelle Punktestand?
+      - Wie ist der aktuelle Spielstand?
+      - Wie ist der aktuelle Stand?
 
-- entity: castling
-  values:
-  - Königsflügel
-  - Damenflügel
+  - intent: restart_game
+    examples: |
+      - Ich möchte das Spiel neu starten
+      - Ich möchte das Spiel von vorne beginnen
+      - Ich möchte das Spiel von neuem beginnen
+      - Ich möchte das Spiel von neuem starten
+      - Ich will von neu anfangen
+      - Ich will von neu beginnen
+      - Ich will von neu starten
+      - Ich will von neuem anfangen
+      - nochmal vom Anfang
+      - nochmal von neuem
+      - nochmal von neuem anfangen
+      - nochmal von neuem beginnen
 
-- entity: promotion
-  values:
-  - Dame
-  - Turm
-  - Läufer
-  - Springer
+  
+  
 
-- entity: check
-  values:
-  - Schach
+  
 
-- entity: checkmate
-  values:
-  - Schachmatt
 
-- entity: color
-  values:
-  - weiß
-  - schwarz
+
