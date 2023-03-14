@@ -72,7 +72,7 @@ class ActionQuitGame(Action):
         # Quit the game
 
         # Send a message to the user
-        dispatcher.utter_message("Game ended!")
+        dispatcher.utter_message("Das Spiel wurde beendet!")
 
         return [SlotSet("game_started", False)]
 
@@ -90,6 +90,6 @@ class ActionRestartGame(Action):
         # Restart the game
 
         # Send a message to the user
-        dispatcher.utter_message("Game restarted!")
+        dispatcher.utter_message("Das Spiel wurde neugestartet!")
 
         return [SlotSet("game_started", True)]
