@@ -9,6 +9,7 @@ intents:
   - restart_game
   - goodbye
   - bot_challenge
+  - choose_color
 
 entities:
     - piece

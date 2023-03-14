@@ -140,7 +140,20 @@ nlu:
       - nochmal von neuem anfangen
       - nochmal von neuem beginnen
 
-  
+  - intent: choose_color
+    examples: |
+      - Ich möchte [weiß](color) spielen
+      - Ich möchte [schwarz](color) spielen
+      - Ich möchte [weiss](color) spielen
+      - Ich möchte [schach](check) spielen
+      - Ich will [weiß](color) spielen
+      - Ich will [schwarz](color) spielen
+      - Ich nehme [weiß](color)
+      - Ich nehme [schwarz](color)
+      - Ich nehme [weiss](color)
+      - Gib mir [weiß](color)
+      - Gib mir [schwarz](color)
+    
   
 
   

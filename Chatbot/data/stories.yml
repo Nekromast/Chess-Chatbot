@@ -5,6 +5,12 @@ stories:
 - story: start game path
   steps:
   - intent: start_game
+  - action: utter_choose_color
+  - intent: choose_color
+    entities:
+    - color: "schwarz"
+  - slot_was_set:
+    - color: "schwarz"
   - action: action_start_game
   - slot_was_set:
     - game_started: true
