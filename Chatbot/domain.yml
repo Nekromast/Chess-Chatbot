@@ -21,43 +21,45 @@ entities:
 slots:
   move:
     type: text
+    mappings: #TODO: add mapping for move
+      - type: custom
   piece:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: piece
   source_square:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: source_square
 
   target_square:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: target_square
   castling:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: castling
   promotion:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: promotion
   game_started:
     type: bool
     initial_value: false
     mappings:
-      type: custom
+    - type: custom
       action: action_extract_slots
   color:
     type: text
     mappings:
-      type:
-    from_entity: color
+     - type: from_entity
+       entity: color
 
 
 
