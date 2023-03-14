@@ -6,34 +6,33 @@ stories:
   steps:
   - intent: start_game
   - action: action_start_game
+  - slot_was_set:
+      - game_started: true
 
 - story: make move, pawn a2 a4
+
   steps:
     - intent: make_move
-      conditions:
-        - slot_was_set:
-            - game_started: true
-      entities:
+    - entities:
         - piece: "Bauer"
         - source_square: "a2"
         - target_square: "a4"
-          slot_was_set:
+        - action: action_make_move
+        - slot_was_set:
             - move: "Bauer a2 a4"
-    - action: action_make_move
+
 
 - story: make move, pawn a2 a3
   steps:
     - intent: make_move
-      conditions:
-            - slot_was_set:
-                - game_started: true
       entities:
             - piece: "Bauer"
             - source_square: "a2"
             - target_square: "a3"
-      slot_was_set:
-                - move: "Bauer a2 a3"
     - action: action_make_move
+    - slot_was_set:
+                - move: "Bauer a2 a3"
+
 
 - story: make move, queen d1 h5
   steps:
