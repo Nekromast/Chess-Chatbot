@@ -1,18 +1,18 @@
 version: "3.1"
 
 nlu:
-  - entities:
-      - color
-      - examples: |
-          - [weiß](color)
-          - [schwarz](color)
-          - [weiss](color)
-      - check
-      - examples: |
-          - [Schach](check)
-      - checkmate
-      - examples: |
-          - [Schachmatt](checkmate)
+#  entities:
+#  - color
+#  - examples: |
+#      - [weiß](color)
+#      - [schwarz](color)
+#      - [weiss](color)
+#  - check
+#  - examples: |
+#      - [Schach](check)
+#  - checkmate
+#  - examples: |
+#      - [Schachmatt](checkmate)
 
   - intent: start_game
     examples: |
@@ -44,7 +44,6 @@ nlu:
   - intent: make_move
     examples: |
       - Ich möchte meinen [Springer](piece) von [e2](source_square) nach [g3](target_square) bewegen
-      - Setze meinen [Läufer](piece) auf [d4](target_square)
       - Ich ziehe meinen [König](piece) von [e1](source_square) nach [g1](target_square)
       - [Bauer](piece) von [h2](source_square) nach [h4](target_square)
       - [Dame](piece) von [d8](source_square) nach [d4](target_square)
@@ -68,46 +67,45 @@ nlu:
       - [Springer](piece) von [g8](source_square) nach [f6](target_square)
       - [Bauer](piece) von [b7](source_square) nach [b5](target_square)
       - [Dame](piece) von [d8](source_square) nach [d5](target_square)
-
-    entities:
-      - piece
-      - examples: |
-          - Bauer
-          - Dame
-          - König
-          - Turm
-          - Läufer
-          - Springer
-      - source_square
-      - examples: |
-          - a1
-          - a2
-          - a3
-          - a4
-          - f5
-          - h6
-          - e2
-          - d4
-      - target_square
-      - examples: |
-          - a1
-          - a2
-          - a3
-          - a4
-          - f5
-          - h6
-          - e2
-          - d4
-      - castling
-      - examples: |
-          - Königsflügel
-          - Damenflügel
-      - promotion
-      - examples: |
-          - Dame
-          - Turm
-          - Läufer
-          - Springer
+#    - entities:
+#        - piece
+#        - examples: |
+#            - Bauer
+#            - Dame
+#            - König
+#            - Turm
+#            - Läufer
+#            - Springer
+#        - source_square
+#        - examples: |
+#            - a1
+#            - a2
+#            - a3
+#            - a4
+#            - f5
+#            - h6
+#            - e2
+#            - d4
+#        - target_square
+#        - examples: |
+#            - a1
+#            - a2
+#            - a3
+#            - a4
+#            - f5
+#            - h6
+#            - e2
+#            - d4
+#        - castling
+#        - examples: |
+#            - Königsflügel
+#            - Damenflügel
+#        - promotion
+#        - examples: |
+#            - Dame
+#            - Turm
+#            - Läufer
+#             - Springer
 
 
 
