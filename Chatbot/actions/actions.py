@@ -16,6 +16,7 @@ from ChessAI.main import ChessAI
 
 ChessAI = ChessAI()
 
+
 class ActionMakeMove(Action):
 
     def name(self) -> Text:
@@ -44,9 +45,13 @@ class ActionStartGame(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Führen Sie hier die Aktion aus, um das Spiel zu starten
-        # Zum Beispiel, indem Sie eine API-Anfrage an einen Game-Server senden
-        ChessAI.start_game("white", vs_ai=True)
+
+        color = tracker.get_slot("color")
+        if color == "schwarz":
+            color = "black"
+        else:
+            color = "white"
+        ChessAI.start_game(color, vs_ai=True)
         # Antworte dem Benutzer mit einer Bestätigungsnachricht
         dispatcher.utter_message(text="Das Spiel wurde gestartet!")
 
@@ -88,6 +93,3 @@ class ActionRestartGame(Action):
         dispatcher.utter_message("Game restarted!")
 
         return [SlotSet("game_started", True)]
-
-
-

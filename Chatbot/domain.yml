@@ -23,18 +23,22 @@ slots:
     type: text
   piece:
     type: unfeaturized
+    from_entity: piece
   source_square:
     type: unfeaturized
+    from_entity: source_square
   target_square:
     type: unfeaturized
+    from_entity: target_square
   castling:
     type: unfeaturized
   promotion:
     type: unfeaturized
   game_started:
     type: bool
-    color:
+  color:
     type: unfeaturized
+    from_entity: color
 
 
 responses:
