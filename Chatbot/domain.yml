@@ -7,6 +7,8 @@ intents:
   - quit_game
   - get_game_status
   - restart_game
+  - goodbye
+  - bot_challenge
 
 entities:
     - piece
@@ -103,6 +105,13 @@ responses:
   utter_choose_color:
   - text: "Wähle eine Farbe aus: Weiß oder Schwarz?"
 
+  utter_goodbye:
+    - text: "Auf Wiedersehen!"
+
+  utter_iamabot:
+    - text: "Ich bin ein Chatbot, Herr Gawron"
+
+
 actions:
  - action_start_game
  - action_make_move
@@ -110,6 +119,8 @@ actions:
  - action_quit_game
  - action_get_game_status
  - action_restart_game
+ - action_extract_slots
+ - action_construct_move
 
 session_config:
   session_expiration_time: 60
