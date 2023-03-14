@@ -71,7 +71,7 @@ slots:
     mappings:
      - type: from_entity
        entity: color
-       intent: start_game
+       intent: choose_color
 
 
 
