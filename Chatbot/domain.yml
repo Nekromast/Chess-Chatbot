@@ -22,23 +22,43 @@ slots:
   move:
     type: text
   piece:
-    type: unfeaturized
-    from_entity: piece
+    type: text
+    mappings:
+      type: from_entity
+      entity: piece
   source_square:
-    type: unfeaturized
-    from_entity: source_square
+    type: text
+    mappings:
+      type: from_entity
+      entity: source_square
+
   target_square:
-    type: unfeaturized
-    from_entity: target_square
+    type: text
+    mappings:
+      type: from_entity
+      entity: target_square
   castling:
-    type: unfeaturized
+    type: text
+    mappings:
+      type: from_entity
+      entity: castling
   promotion:
-    type: unfeaturized
+    type: text
+    mappings:
+      type: from_entity
+      entity: promotion
   game_started:
     type: bool
+    initial_value: false
+    mappings:
+      type: custom
+      action: action_extract_slots
   color:
-    type: unfeaturized
+    type: text
+    mappings:
+      type:
     from_entity: color
+
 
 
 responses:
@@ -48,29 +68,29 @@ responses:
   utter_quit:
   - text: "Vielen Dank für das Spiel!"
 
-    utter_notstarted:
-    - text: "Das Spiel wurde noch nicht gestartet."
+  utter_notstarted:
+  - text: "Das Spiel wurde noch nicht gestartet."
 
-    utter_ask_start_game:
-    - text: "Soll ich das Spiel starten?"
+  utter_ask_start_game:
+  - text: "Soll ich das Spiel starten?"
 
-    utter_ask_move:
-    - text: "Welchen Zug möchtest du machen?"
+  utter_ask_move:
+  - text: "Welchen Zug möchtest du machen?"
 
-    utter_ask_undo_move:
-    - text: "Welchen Zug möchtest du rückgängig machen?"
+  utter_ask_undo_move:
+  - text: "Welchen Zug möchtest du rückgängig machen?"
 
-    utter_ask_quit_game:
-    - text: "Soll ich das Spiel beenden?"
+  utter_ask_quit_game:
+  - text: "Soll ich das Spiel beenden?"
 
-    utter_ask_restart_game:
-    - text: "Soll ich das Spiel neu starten?"
+  utter_ask_restart_game:
+  - text: "Soll ich das Spiel neu starten?"
 
-    utter_ask_get_game_status:
-    - text: "Soll ich den Spielstatus ausgeben?"
+  utter_ask_get_game_status:
+  - text: "Soll ich den Spielstatus ausgeben?"
 
-    utter_choose_color:
-    - text: "Wähle eine Farbe aus: Weiß oder Schwarz?"
+  utter_choose_color:
+  - text: "Wähle eine Farbe aus: Weiß oder Schwarz?"
 
 actions:
  - action_start_game
