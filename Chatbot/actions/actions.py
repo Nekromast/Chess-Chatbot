@@ -93,3 +93,40 @@ class ActionRestartGame(Action):
         dispatcher.utter_message("Das Spiel wurde neugestartet!")
 
         return [SlotSet("game_started", True)]
+
+
+class ActionGetBoard(Action):
+
+    def name(self) -> Text:
+        return "action_get_board"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Hier code für das Neustarten des Spiels einfügen
+        board = ChessAI.get_board()
+        # Restart the game
+
+        # Send a message to the user
+        dispatcher.utter_message("Das Spielbrett sieht so aus: {}".format(board))
+
+        return []
+
+
+class ActionConstructMove(Action):
+
+    def name(self) -> Text:
+        return "action_construct_move"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        source_square = + tracker.get_slot("source_square")
+        target_square = + tracker.get_slot("target_square")
+        alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+        move = ((alphabet.index(source_square[0]), source_square[1]-1), (alphabet.index(target_square[0]), target_square[1]-1))
+        # Send a message to the user
+        dispatcher.utter_message("Dein Zug ist: {}".format(move))
+
+        return [SlotSet("move", move)]
