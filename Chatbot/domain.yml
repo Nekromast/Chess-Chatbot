@@ -28,47 +28,47 @@ slots:
   piece:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: piece
       intent: make_move
   source_square:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: source_square
       intent: make_move
 
   target_square:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: target_square
       intent: make_move
   castling:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: castling
       intent: make_move
   promotion:
     type: text
     mappings:
-      type: from_entity
+    - type: from_entity
       entity: promotion
       intent: make_move
   game_started:
     type: bool
     initial_value: false
     mappings:
-      type: custom
+    - type: custom
       action: action_extract_slots
       intent: start_game
   color:
     type: text
     mappings:
-      type:
-    from_entity: color
-    intent: start_game
+     - type: from_entity
+       entity: color
+       intent: start_game
 
 
 
